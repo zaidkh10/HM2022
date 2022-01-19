@@ -1,22 +1,27 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+// ملف ملوش لازمة 
 
-const Artistcard = ({artist}) => {
-    return (
-        <div>
-<Card style={{ width: '18rem' }}>
-  <Link to={`Artists/${artist.artistId}`}>
-  <Card.Img variant="top" src={artist.image}/>
-  </Link>
-  <Card.Body>
-    <Card.Title>{artist.artistName}</Card.Title>
-    <Card.Text>
-     {artist.collectionCensoredName}
-    </Card.Text>
-  </Card.Body>
-</Card>        </div>
-    )
-}
+import React from "react";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Image , Row, Button} from "react-bootstrap";
 
-export default Artistcard
+import "../App.css";
+
+const Artistcard = (props) => {
+  return (
+    <div className="Cardimage" >
+    <Card  >
+        <Link to={`Artists/${props.name.artistId}`} state={props.name}>
+          <Card.Img  src={props.name.image} />
+        </Link>
+        <Card.Body>
+          <Card.Title>{props.name.artistName}</Card.Title>
+          <Card.Text>{props.name.collectionCensoredName}</Card.Text>
+          <Button onClick={props.change(props.name)}>  </Button>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
+
+export default Artistcard;
