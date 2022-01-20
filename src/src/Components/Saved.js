@@ -12,7 +12,7 @@ function Saved(props) {
           return (
             <div className="Cardimage">
               <Card>
-                <Link to={`/Artists/${it.artistId}`} state={it}>
+                <Link to={`Artists/${it.artistId}`} state={it}>
                   <Card.Img src={it.image} width="200" />
                 </Link>
                 <Card.Body>

@@ -13,12 +13,12 @@ const Main = (props) => {
             <div className="Cardimage" >
             <Card  >
                 <Link to={`Artists/${artist.artistId}`} state={artist}>
-                  <Card.Img  src={artist.image} />
+                  <Card.Img  src={artist.image} width="200"/>
                 </Link>
                 <Card.Body>
                   <Card.Title>{artist.artistName}</Card.Title>
                   <Card.Text>{artist.collectionCensoredName}</Card.Text>
-                  <Button onClick={() => props.change1(artist)}>Save!</Button>
+                  <Button className='Artistlink' onClick={() => props.change1(artist)} >Save!</Button>
                 </Card.Body>
               </Card>
             </div>
